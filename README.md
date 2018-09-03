@@ -30,7 +30,8 @@ TBA
 
 ### Scala
 - Latest version: [2.12.6](https://www.scala-lang.org/)
-- Use IDEs supporting Scala.
+- Use IDEs to write a Scala program.
     + IntelliJ IDEA, Eclipse, etc
+    + Reading 'Scala setting.pdf' will be helpful.
 
 #### Honor Code: *DO NOT CHEAT*
