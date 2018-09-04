@@ -13,7 +13,7 @@ Download 'lecture.pdf'.
 
 |No. | Published     |
 |----|------------      |
-| 1 | 09/04             |
+| 1 | 09/05             |
 | - | -             |
 
 
