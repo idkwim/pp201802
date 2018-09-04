@@ -9,7 +9,13 @@
 
 ##  Lecture slide updates
 
-TBA
+Download 'lecture.pdf'.
+
+|No. | Published     |
+|----|------------      |
+| 1 | 09/04             |
+| - | -             |
+
 
 ## Assignments
 
