@@ -11,10 +11,11 @@
 
 Download 'lecture.pdf'.
 
-|No. | Published     |
-|----|------------      |
-| 1 | 09/05             |
-| - | -             |
+|No. | Published    |
+|----|------------  |
+| 1  | 09/05        |
+| 2  | 09/17        |
+| -  | -            |
 
 
 ## Assignments
