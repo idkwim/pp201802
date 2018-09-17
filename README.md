@@ -7,14 +7,16 @@
 
 ## Announcements
 
+- Sep 17: Midterm exam schedule: Oct 21, 2pm ~ 5pm (no strict timeout).
+
 ##  Lecture slide updates
 
 Download 'lecture.pdf'.
 
 |No. | Published    |
 |----|------------  |
-| 1  | 09/05        |
-| 2  | 09/17        |
+| 1  | Sep 05       |
+| 2  | Sep 17       |
 | -  | -            |
 
 
