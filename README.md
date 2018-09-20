@@ -8,6 +8,7 @@
 ## Announcements
 
 - Sep 17: Midterm exam schedule: Oct 21, 2pm ~ 5pm (no strict timeout).
+- Sep 20: [HW1](assignments/hw1) is out. (Due date: 10/4(THU) 23:59) [Instruction for submission] will be announced as soon as it gets ready.
 
 ##  Lecture slide updates
 
@@ -22,8 +23,16 @@ Download 'lecture.pdf'.
 
 
 ## Assignments
+- Download skeleton code and replace `???` with your code
+- No delayed submission
+- The score is automatically uncovered right after the due date.
+- Claims: within 2 weeks from the due date, please.
+- You must use the lastest version of Scala(2.12.6).
 
-TBA
+|No. | Published     | Due       	| Description                   	 	 	 	 	 	 	 	 	 	  	|
+|----|------------	|------------	|----------------------	|
+| 1 | 09/20     	|10/4 23:59    | Basics                                                            	|
+
 
 ## Must Read
 
