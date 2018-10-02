@@ -99,7 +99,7 @@ object Main {
    (e.g. repeat ((x: Int) => x + 2)(5)(3) results in 5+2+2+2 = 11)
    */
 
-  def repeat (f: Int => Int)(init: Int)(num: Int): Int = ???
+  def repeat (f: Int => Int)(init: Int)(count: Int): Int = ???
 
   /*
    B) You can implement useful functions using "repeat".
