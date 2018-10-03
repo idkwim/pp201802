@@ -8,7 +8,8 @@
 ## Announcements
 
 - Sep 17: Midterm exam schedule: Oct 21, 2pm ~ 5pm (no strict timeout).
-- Sep 20: [HW1](assignments/hw1) is out. (Due date: 10/4(THU) 23:59) [Instruction for submission] will be announced as soon as it is ready.
+- Sep 20: [HW1](assignments/hw1) is out. (Due date: 10/4(THU) 23:59)
+    + [Instruction for submission](https://github.com/snu-sf-class/pp201802/issues/7)
 
 ##  Lecture slide updates
 
