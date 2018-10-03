@@ -29,7 +29,8 @@ Download 'lecture.pdf'.
 - No delayed submission
 - The score is automatically uncovered right after the due date.
 - Claims: within 2 weeks from the due date, please.
-- You must use the lastest version of Scala(2.12.6).
+- You must use the lastest version of Scala (2.12.6).
+- [Instruction for submission](https://github.com/snu-sf-class/pp201802/issues/7)
 
 |No. | Published     | Due       	| Description                   	 	 	 	 	 	 	 	 	 	  	|
 |----|------------	|------------	|----------------------	|
