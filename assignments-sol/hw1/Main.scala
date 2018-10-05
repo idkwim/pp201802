@@ -37,7 +37,14 @@ object Main {
      In short, you can build tuple with "(_, _, _, .. _,)" syntax,
      and get n'th element with "._n".
      */
-    fib3A(n)
+    def _fib3B(n: Int): (BigInt, BigInt, BigInt) = {
+      if(n <= 0) (1,-1,1)
+      else {
+        val (past3, past2, past1) = _fib3B(n-1)
+        (past2, past1, past3+past2+past1)
+      }
+    }
+    _fib3B(n)._3
   }
 
   /*
@@ -91,6 +98,7 @@ object Main {
       else if (n % 2 == 0) false
       else {
         val sqrtn = 1 + sqrt(n).toLong
+		@tailrec
         def loop(p : Long) : Boolean  =
           if (p >= sqrtn) true
           else if (n % p == 0) false
@@ -106,7 +114,7 @@ object Main {
    */
 
   def repeat (f: Int => Int)(init: Int)(num: Int): Int =
-      if (num<=4) f(f(f(f(init))))
+      if (num<=0) init
       else repeat(f)(f(init))(num-1)
 
   /*
@@ -117,3 +125,4 @@ object Main {
 
   def power (n: Int)(m: Int) = repeat ((x: Int)=>x*n)(1)(m)
 }
+
