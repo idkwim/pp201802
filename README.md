@@ -10,6 +10,7 @@
 - Sep 17: Midterm exam schedule: Oct 21, 2pm ~ 5pm (no strict timeout).
 - Sep 20: [HW1](assignments/hw1) is out. (Due date: 10/4(THU) 23:59)
     + [Instruction for submission](https://github.com/snu-sf-class/pp201802/issues/7)
+- Oct 12: [HW2](assignments/hw2) is out. (Due date: 10/24(WED) 23:59)
 
 ##  Lecture slide updates
 
@@ -36,6 +37,7 @@ Download 'lecture.pdf'.
 |No. | Published     | Due       	| Description                   	 	 	 	 	 	 	 	 	 	  	|
 |----|------------	|------------	|----------------------	|
 | 1 | 09/20     	|10/4 23:59    | Basics                                                            	|
+| 2 | 10/12     	|10/24 23:59    | Algebraic Data Types                                                            	|
 
 
 ## Must Read
