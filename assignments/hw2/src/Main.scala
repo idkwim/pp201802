@@ -19,7 +19,7 @@ object Main {
   def zip(l1: IList, l2:IList): IList = ???
 
   /*
-   Exercise 2: Exp calculator with sqrt
+   Exercise 2: Exp calculator with square
    Given Exp, calculate the result of Int value.
    For each case class EAdd/ESub/EMul, you may interpret them as
    normal integer operators: +, -, *.
