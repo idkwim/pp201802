@@ -7,11 +7,11 @@
 
 ## Announcements
 
-- Sep 17: Midterm exam schedule: Oct 21, 2pm ~ 5pm (no strict timeout).
+- Oct 17: [Midterm exam announcement](https://github.com/snu-sf-class/pp201802/blob/master/MidtermInstruction.md)
+- Oct 12: [HW2](assignments/hw2) is out. (Due date: 10/24(WED) 23:59)
 - Sep 20: [HW1](assignments/hw1) is out. (Due date: 10/4(THU) 23:59)
     + [Instruction for submission](https://github.com/snu-sf-class/pp201802/issues/7)
-- Oct 12: [HW2](assignments/hw2) is out. (Due date: 10/24(WED) 23:59)
-- Oct 17: [Midterm exam announcement](https://github.com/snu-sf-class/pp201802/blob/master/MidtermInstruction.md)
+- Sep 17: Midterm exam schedule: Oct 21, 2pm ~ 5pm (no strict timeout).
 
 ##  Lecture slide updates
 
