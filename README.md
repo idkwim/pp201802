@@ -24,6 +24,7 @@ Download 'lecture.pdf'.
 | 3  | Sep 19       |
 | 4  | Oct 03       |
 | 5  | Oct 10       |
+| 6  | Oct 17       |
 | -  | -            |
 
 
