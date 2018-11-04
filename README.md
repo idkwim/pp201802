@@ -7,6 +7,7 @@
 
 ## Announcements
 
+- Nov 05: [HW3](assignments/hw3) is out. (Due date: 11/18(SUN) 23:59)
 - Oct 23: Midterm [problems](https://github.com/snu-sf-class/pp201802/tree/master/midterm/problems) & [solution](https://github.com/snu-sf-class/pp201802/tree/master/midterm/solution) uploaded.
 - Oct 17: [Midterm exam announcement](https://github.com/snu-sf-class/pp201802/blob/master/MidtermInstruction.md)
 - Oct 12: [HW2](assignments/hw2) is out. (Due date: 10/24(WED) 23:59)
@@ -44,6 +45,7 @@ Download 'lecture.pdf'.
 |----|------------	|------------	|----------------------	|
 | 1 | 09/20     	|10/4 23:59    | Basics                                                            	|
 | 2 | 10/12     	|10/24 23:59    | Algebraic Data Types                                                            	|
+| 3 | 11/05     	|11/18 23:59    | Abstract Classes                                                            	|
 
 
 ## Must Read
