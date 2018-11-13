@@ -31,6 +31,7 @@ Download 'lecture.pdf'.
 | 8  | Oct 29       |
 | 9  | Nov 01       |
 | 10 | Nov 07       |
+| 11 | Nov 13       |
 | -  | -            |
 
 
