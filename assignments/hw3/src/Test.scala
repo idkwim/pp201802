@@ -30,6 +30,9 @@ object Test extends App {
         case _ => false
       }
     )
+
+    print_result(Problem2.sumElements(d1) == 2)
+
   }
 
   // Problem 3
@@ -45,6 +48,16 @@ object Test extends App {
         case _ => false
       }
     )
+
+    val emT = Problem3.Empty[String]()
+    val t1 = Problem3.Node("t1", emT, emT)
+    val t2 = Problem3.Node("t", emT, t1)
+
+    print_result(
+      if(t2.biIter == null) false
+      else t2.biIter.getNext.getValue == Some("t1")
+    )
+
   }
 
   // Problem 4
