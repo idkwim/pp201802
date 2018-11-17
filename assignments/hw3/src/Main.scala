@@ -101,12 +101,12 @@ object Main {
     }
 
     case class Empty[A]() extends BiIterableTree[A] {
-      def biIter = ???
+      def biIter: BiIter[A] = ??? // You may have to change the type of biIter
     }
 
     case class Node[A](value: A, left: BiIterableTree[A], right: BiIterableTree[A])
         extends BiIterableTree[A] {
-      def biIter = ???
+      def biIter: BiIter[A] = ??? // You may have to change the type of biIter
     }
 
   }
