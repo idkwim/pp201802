@@ -52,9 +52,9 @@ object Main {
     class IterDictImpl[K, V](eqFunc: K => K => Boolean)(val data: List[(K, V)])
         extends IterDict[K, V] {
 
-      def getValue = ???
+      def getValue: Option[(K, V)] = ???
 
-      def getNext = ???
+      def getNext: Iter[(K, V)] = ???
 
       // When the given key already exists in this dictionary, overwrite the value.
       def add(k: K, v: V) : IterDict[K, V] = ???
