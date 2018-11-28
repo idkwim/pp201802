@@ -6,7 +6,7 @@
     + Email address: pp2018fall@sf.snu.ac.kr
 
 ## Announcements
-
+- Nov 28: Project is out. (Due date: 12/20(THU) 23:59)
 - Nov 28: Final exam schedule: Dec 14, 6pm ~ 9pm (no strict timeout)
 - Nov 05: [HW3](assignments/hw3) is out. (Due date: 11/18(SUN) 23:59)
 - Oct 23: Midterm [problems](https://github.com/snu-sf-class/pp201802/tree/master/midterm/problems) & [solution](https://github.com/snu-sf-class/pp201802/tree/master/midterm/solution) uploaded.
