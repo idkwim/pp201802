@@ -34,7 +34,6 @@ Download 'lecture.pdf'.
 | 3  | Sep 19       |
 | 2  | Sep 17       |
 | 1  | Sep 05       |
-|----|------------  |
 
 
 ## Assignments
