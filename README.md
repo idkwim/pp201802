@@ -22,18 +22,19 @@ Download 'lecture.pdf'.
 
 |No. | Published    |
 |----|------------  |
-| 1  | Sep 05       |
-| 2  | Sep 17       |
-| 3  | Sep 19       |
-| 4  | Oct 03       |
-| 5  | Oct 10       |
-| 6  | Oct 17       |
-| 7  | Oct 24       |
-| 8  | Oct 29       |
-| 9  | Nov 01       |
-| 10 | Nov 07       |
+| 12 | Nov 28       |
 | 11 | Nov 13       |
-| -  | -            |
+| 10 | Nov 07       |
+| 9  | Nov 01       |
+| 8  | Oct 29       |
+| 7  | Oct 24       |
+| 6  | Oct 17       |
+| 5  | Oct 10       |
+| 4  | Oct 03       |
+| 3  | Sep 19       |
+| 2  | Sep 17       |
+| 1  | Sep 05       |
+|----|------------  |
 
 
 ## Assignments
