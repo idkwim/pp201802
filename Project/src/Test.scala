@@ -78,7 +78,7 @@ object Test extends App {
       }
 
       { // 7
-        val code = "(let (def f (x) (if (= x 0) 0 (+ x (f (- x 1))))) (let (val g f) (g 5)))"
+        val code = "(let ((def f (x) (if (= x 0) 0 (+ x (app f (- x 1)))))) (let ((val g f)) (app g 5)))"
         val res = conv.toInt(run_myeval(code)) match {
           case Some(15) => true
           case _ => false
@@ -96,7 +96,7 @@ object Test extends App {
       }
 
       { // 9
-        val code = "(let ((def x () b) (lazy val a (app x)) (val b 5)) a)"
+        val code = "(let ((def x () b) (lazy-val a (app x)) (val b 5)) a)"
         val res = conv.toInt(run_myeval(code)) match {
           case Some(5) => true
           case _ => false
