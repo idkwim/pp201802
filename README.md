@@ -6,6 +6,7 @@
     + Email address: pp2018fall@sf.snu.ac.kr
 
 ## Announcements
+- Nov 30: [HW4](assignments/hw4) is out. (Due date: 12/16(SUN) 23:59)
 - Nov 28: Project is out. (Due date: 12/20(THU) 23:59)
 - Nov 28: Final exam schedule: Dec 14, 6pm ~ 9pm (no strict timeout)
 - Nov 05: [HW3](assignments/hw3) is out. (Due date: 11/18(SUN) 23:59)
@@ -49,6 +50,7 @@ Download 'lecture.pdf'.
 | 1 | 09/20     	|10/4 23:59    | Basics                                                            	|
 | 2 | 10/12     	|10/24 23:59    | Algebraic Data Types                                                            	|
 | 3 | 11/05     	|11/18 23:59    | Abstract Classes                                                            	|
+| 4 | 11/30     	|12/16 23:59    | OOP & Type Classes
 
 
 ## Must Read
