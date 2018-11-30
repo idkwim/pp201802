@@ -61,7 +61,8 @@ object Main {
 
   /* Problem 3
    Implement countElements, which counts occurrences of each element in a given list, using dictionary.
-   Furthermore, implement two versions of Dict and Iter using List and BST (binary search tree).
+   Furthermore, implement two versions of Dict and Iter using List and BST
+   (binary search tree, See https://en.wikipedia.org/wiki/Binary_search_tree).
    Note that Iter must iterate through a dictionary in ascending order of keys.
    */
 
