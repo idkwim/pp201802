@@ -21,7 +21,7 @@ object Test extends App {
 
     val s0 = new MyLetter
     val s1 = s0.setHeader("Kim")
-    val s2 = s1.setBody("Hello, This is final homework. Good   luck")
+    val s2 = s1.setBody("Hello, This\n\tis\tfinal homework. Good   luck")
     val s3 = s2.setFooter("Lee")
     print_result(s3.toString == "Dear Kim\n\nHello, This is final homework.\n Good luck\n\nBest,\nLee")
   }
