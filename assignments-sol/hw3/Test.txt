@@ -1,0 +1,590 @@
+//Prob1
+val mc = new Problem1.MyClass[Boolean, Boolean, Boolean, Boolean, Boolean, Boolean]()
+typeOf[mc.Ty1]<:<typeOf[mc.CommonTy]
+typeOf[mc.Ty2]<:<typeOf[mc.CommonTy]
+!(typeOf[Any]<:<typeOf[mc.CommonTy])
+typeOf[{ def apply: Nothing; val a: Boolean; }]<:<typeOf[mc.CommonTy]
+typeOf[mc.CommonTy]<:<typeOf[{ val a: Boolean; def apply: Any; }]
+typeOf[mc.CommonTy]<:<typeOf[{ def apply: Nothing => {val b: Boolean}; }]
+typeOf[mc.CommonTy]<:<typeOf[{ def apply: {val func: Any => Nothing; val c: Boolean; val e: Boolean} => Any; }]
+typeOf[mc.CommonTy]<:<typeOf[{ def apply: {val func: {} => Nothing; val c: Boolean; val e: Boolean} => Any; }]
+typeOf[mc.CommonTy]<:<typeOf[{ def apply: {val func: Any => {val a: Boolean; val b:Boolean}; val c: Boolean; val e: Boolean} => Any; }]
+typeOf[{ def apply: { val func: {} => {val a:Boolean; val b:Boolean}; val c:Boolean; val e:Boolean} => {val b:Boolean}; val a: Boolean}]<:<typeOf[mc.CommonTy]
+typeOf[mc.CommonTy]<:<typeOf[{ def apply: { val func: {} => {val a:Boolean; val b:Boolean}; val c:Boolean; val e:Boolean} => {val b:Boolean}; val a: Boolean}]
+
+
+//Prob2
+val intEq: Int => Int => Boolean = { x => y => (x == y) }
+val strEq: String => String => Boolean = { x => y => (x == y) }
+
+sealed abstract class MyPairList() extends Iter[(Int, Int)]
+case class MPLNil() extends MyPairList {
+  def getValue = None
+  def getNext = MPLNil()
+}
+case class MPLCons(h:(Int, Int), t:MyPairList) extends MyPairList {
+  def getValue = Some(h)
+  def getNext = t
+}
+
+def ltoMPL(l:List[(Int,Int)]) : MyPairList =
+  l match {
+    case Nil => MPLNil()
+    case h::t => MPLCons(h, ltoMPL(t))
+  }
+
+// case 0
+{
+  val d0 = Problem2.IterDictImpl.empty[Int, Int](intEq)
+  if (d0 == null) false else {
+    val d1 = d0.add(1, 2)
+
+    d1.find(1) match {
+      case Some(n) => n == 2
+      case _ => false
+    }
+  }
+}
+// case 1
+{
+  val d0 = Problem2.IterDictImpl.empty[Int, Int](intEq)
+  if (d0 == null) false else {
+    val d1 = d0.add(1, 2)
+
+    d1.find(1) match {
+      case Some(n) => n == 2
+      case _ => false
+    }
+  }
+}
+// case 2
+{
+  val d0 = Problem2.IterDictImpl.empty[Int, Int](intEq)
+  if (d0 == null) false else {
+    d0.getValue match {
+      case None => true
+      case _ => false
+    }
+  }
+}
+// case 3
+{
+  val d0 = Problem2.IterDictImpl.empty[Int, Int](intEq)
+  if (d0 == null) false else {
+    d0.find(3) match {
+      case None => true
+      case _ => false
+    }
+  }
+}
+// case 4
+{
+  val d0 = Problem2.IterDictImpl.empty[Int, Int](intEq)
+  if (d0 == null) false else {
+    d0.getNext.getValue match {
+      case None => true
+      case _ => false
+    }
+  }
+}
+// case 5
+{
+  val d0 = Problem2.IterDictImpl.empty[Int, String](intEq)
+  if (d0 == null) false else {
+    val d1 = d0.add(3, "aa")
+    d1.find(3) match {
+      case Some("aa") => true
+      case _ => false
+    }
+  }
+}
+// case 6
+{
+  val d0 = Problem2.IterDictImpl.empty[String, Int](strEq)
+  if (d0 == null) false else {
+    val d1 = d0.add("a", 3)
+    val d2 = d1.add("c", 5)
+    d2.find("c") match {
+      case Some(5) => true
+      case _ => false
+    }
+  }
+}
+// case 7
+{
+  val d0 = Problem2.IterDictImpl.empty[String, Int](strEq)
+  if (d0 == null) false else {
+    val d1 = d0.add("a", 3)
+    val d2 = d1.add("c", 5)
+    d2.find("b") match {
+      case None => true
+      case _ => false
+    }
+  }
+}
+// case 8
+{
+  val d0 = Problem2.IterDictImpl.empty[Int, String](intEq)
+  if (d0 == null) false else {
+    val d1 = d0.add(4, "p").add(10,"q").add(21,"r").add(4,"s")
+    d1.find(4) match {
+      case Some("s") => true
+      case _ => false
+    }
+  }
+}
+// case 9
+{
+  val d0 = Problem2.IterDictImpl.empty[Int, String](intEq)
+  if (d0 == null) false else {
+    val d1 = d0.add(4, "p").add(10,"q").add(21,"r").add(10,"s").add(34,"t")
+    d1.find(10) match {
+      case Some("s") => true
+      case _ => false
+    }
+  }
+}
+// case 10
+{
+  val d0 = Problem2.IterDictImpl.empty[Int, String](intEq)
+  if (d0 == null) false else {
+    val d1 = d0.add(4, "p").add(10,"q").add(21,"r").add(10,"s").add(34,"t")
+    d1.find(21) match {
+      case Some("r") => true
+      case _ => false
+    }
+  }
+}
+// case 11
+{
+  val d0 = Problem2.IterDictImpl.empty[Int, Int](intEq)
+  if (d0 == null) false else {
+    Problem2.sumElements(d0) == 0
+  }
+}
+// case 12
+{
+  val d0 = Problem2.IterDictImpl.empty[String, Int](strEq)
+  if (d0 == null) false else {
+    val d1 = d0.add("a", 13)
+    Problem2.sumElements(d1) == 13
+  }
+}
+// case 13
+{
+  val d0 = Problem2.IterDictImpl.empty[String, Int](strEq)
+  if (d0 == null) false else {
+    val d1 = d0.add("p", 1).add("q",3).add("r",4)
+    Problem2.sumElements(d1) == 8
+  }
+}
+// case 14
+{
+  val d0 = Problem2.IterDictImpl.empty[String, Int](strEq)
+  if (d0 == null) false else {
+    val d1 = d0.add("p", 4).add("q",10).add("r",21).add("q",22).add("s",-5)
+    Problem2.sumElements(d1) == 42
+  }
+}
+// case 15
+{
+  val d0 = Problem2.IterDictImpl.empty[Int, Int](intEq)
+  if (d0 == null) false else {
+    val d1 = d0.add(3,5).add(2,6).add(5,5).add(7,8)
+    Problem2.sumElements(d1) == 24
+  }
+}
+// case 16
+{
+  val d0 = Problem2.IterDictImpl.empty[Int, Int](intEq)
+  if (d0 == null) false else {
+    val d1 = d0.add(3,5).add(2,6).add(5,5).add(7,8).add(2,4).add(5,3).add(2,-2)
+    Problem2.sumElements(d1) == 14
+  }
+}
+// case 17
+{
+  val mpl1 = ltoMPL(List((3,4),(1,6),(-2,-6),(4, 5)))
+  Problem2.sumElements(mpl1) == 9
+}
+// case 18
+{
+  val mpl1 = ltoMPL(Nil)
+  Problem2.sumElements(mpl1) == 0
+}
+// case 19
+{
+  val mpl1 = ltoMPL(List((-3, 3)))
+  Problem2.sumElements(mpl1) == 3
+}
+// case 20
+{
+  val mpl1 = ltoMPL(List((5, -1), (215, 3), (5, 212)))
+  Problem2.sumElements(mpl1) == 214
+}
+
+
+//Prob3
+// case 0
+{
+  val x = List("A", "B", "C")
+  val bx = new Problem3.BiIterableList(x)
+
+  if (bx.biIter == null) false else
+  bx.biIter.getValue match {
+    case Some(x) => x == "A"
+    case _ => false
+  }
+}
+// case 1
+{
+  val x = List("A", "B", "C")
+  val bx = new Problem3.BiIterableList(x)
+
+  if (bx.biIter == null) false else
+  bx.biIter.getValue match {
+    case Some(x) => x == "A"
+    case _ => false
+  }
+}
+
+// case 2
+{
+  val l = new Problem3.BiIterableList(Nil)
+  if (l.biIter == null) false else
+  l.biIter.getValue match {
+    case None => true
+    case _ => false
+  }
+}
+
+// case 3
+{
+  val l = new Problem3.BiIterableList(Nil)
+  if (l.biIter == null) false else
+  l.biIter.getNext.getValue match {
+    case None => true
+    case _ => false
+  }
+}
+
+// case 4
+{
+  val l = new Problem3.BiIterableList(List(1))
+  if (l.biIter == null) false else
+  l.biIter.getValue match {
+    case Some(1) => true
+    case _ => false
+  }
+}
+
+// case 5
+{
+  val l = new Problem3.BiIterableList(List(1))
+  if (l.biIter == null) false else
+  l.biIter.getNext.getValue match {
+    case None => true
+    case _ => false
+  }
+}
+
+// case 6
+{
+  val l = new Problem3.BiIterableList(List(1))
+  if (l.biIter == null) false else
+  l.biIter.getNext.getPrev.getValue match {
+    case Some(1) => true
+    case _ => false
+  }
+}
+
+// case 7
+{
+  val l = new Problem3.BiIterableList(List("a", "b", "z", "r", "q"))
+  if (l.biIter == null) false else
+  l.biIter.getNext.getNext.getValue match {
+    case Some("z") => true
+    case _ => false
+  }
+}
+
+// case 8
+{
+  val l = new Problem3.BiIterableList(List("a", "b", "z", "r", "q"))
+  if (l.biIter == null) false else
+  l.biIter.getNext.getNext.getPrev.getValue match {
+    case Some("b") => true
+    case _ => false
+  }
+}
+
+// case 9
+{
+  val l = new Problem3.BiIterableList(List("a", "b", "z", "r", "q"))
+  if (l.biIter == null) false else
+  l.biIter.getNext.getNext.getPrev.getNext.getNext.getValue match {
+    case Some("r") => true
+    case _ => false
+  }
+}
+
+// case 10
+{
+  val l = new Problem3.BiIterableList(List("a", "b", "z", "r", "q"))
+  if (l.biIter == null) false else
+  l.biIter.getNext.getNext.getPrev.getPrev.getPrev.getPrev.getNext.getValue match {
+    case Some("a") => true
+    case _ => false
+  }
+}
+
+// case 11
+{
+  val t = Problem3.Empty[String]()
+  if (t.biIter == null) false else
+  t.biIter.getValue match {
+    case None => true
+    case _ => false
+  }
+}
+
+// case 12
+{
+  val emT = Problem3.Empty[String]()
+  val t1 = Problem3.Node("t1", emT, emT)
+  val t = Problem3.Node("t", t1, emT)
+  if (t.biIter == null) false else
+  t.biIter.getValue match {
+    case Some("t") => true
+    case _ => false
+  }
+}
+
+// case 13
+{
+  val emT = Problem3.Empty[String]()
+  val t1 = Problem3.Node("t1", emT, emT)
+  val t = Problem3.Node("t", t1, emT)
+  if (t.biIter == null) false else
+  t.biIter.getPrev.getValue match {
+    case None => true
+    case _ => false
+  }
+}
+
+// case 14
+{
+  val emT = Problem3.Empty[String]()
+  val t1 = Problem3.Node("t1", emT, emT)
+  val t = Problem3.Node("t", t1, emT)
+  if (t.biIter == null) false else
+  t.biIter.getNext.getValue match {
+    case Some("t1") => true
+    case _ => false
+  }
+}
+
+// case 15
+{
+  val emT = Problem3.Empty[String]()
+  val t1 = Problem3.Node("t1", emT, emT)
+  val t = Problem3.Node("t", t1, emT)
+  if (t.biIter == null) false else
+  t.biIter.getNext.getNext.getValue match {
+    case None => true
+    case _ => false
+  }
+}
+
+// case 16
+{
+  val emT = Problem3.Empty[String]()
+  val t1 = Problem3.Node("t1", emT, emT)
+  val t = Problem3.Node("t", t1, emT)
+  if (t.biIter == null) false else
+  t.biIter.getNext.getNext.getPrev.getValue match {
+    case Some("t1") => true
+    case _ => false
+  }
+}
+
+// case 17
+{
+  val emT = Problem3.Empty[String]()
+
+  //         t
+  //        /\
+  //    t2        t3
+  //   /\         /\
+  // l1 t4       l4 t5
+  //     /\         /
+  //   l2 l3       l5
+
+  val l1 = Problem3.Node("l1", emT, emT)
+  val l2 = Problem3.Node("l2", emT, emT)
+  val l3 = Problem3.Node("l3", emT, emT)
+  val l4 = Problem3.Node("l4", emT, emT)
+  val l5 = Problem3.Node("l5", emT, emT)
+
+  val t5 = Problem3.Node("t5", l5, emT)
+  val t4 = Problem3.Node("t4", l2, l3)
+  val t3 = Problem3.Node("t3", l4, t5)
+  val t2 = Problem3.Node("t2", l1, t4)
+  val t = Problem3.Node("t", t2, t3)
+
+  if (t.biIter == null) false else
+  t.biIter.getNext.getValue match {
+    case Some("t2") => true
+    case _ => false
+  }
+}
+
+// case 18
+{
+  val emT = Problem3.Empty[String]()
+
+  //         t
+  //        /\
+  //    t2        t3
+  //   /\         /\
+  // l1 t4       l4 t5
+  //     /\         /
+  //   l2 l3       l5
+
+  val l1 = Problem3.Node("l1", emT, emT)
+  val l2 = Problem3.Node("l2", emT, emT)
+  val l3 = Problem3.Node("l3", emT, emT)
+  val l4 = Problem3.Node("l4", emT, emT)
+  val l5 = Problem3.Node("l5", emT, emT)
+
+  val t5 = Problem3.Node("t5", l5, emT)
+  val t4 = Problem3.Node("t4", l2, l3)
+  val t3 = Problem3.Node("t3", l4, t5)
+  val t2 = Problem3.Node("t2", l1, t4)
+  val t = Problem3.Node("t", t2, t3)
+
+  if (t.biIter == null) false else
+  t.biIter.getNext.getNext.getNext.getValue match {
+    case Some("t4") => true
+    case _ => false
+  }
+}
+
+// case 19
+{
+  val emT = Problem3.Empty[String]()
+
+  //         t
+  //        /\
+  //    t2        t3
+  //   /\         /\
+  // l1 t4       l4 t5
+  //     /\         /
+  //   l2 l3       l5
+
+  val l1 = Problem3.Node("l1", emT, emT)
+  val l2 = Problem3.Node("l2", emT, emT)
+  val l3 = Problem3.Node("l3", emT, emT)
+  val l4 = Problem3.Node("l4", emT, emT)
+  val l5 = Problem3.Node("l5", emT, emT)
+
+  val t5 = Problem3.Node("t5", l5, emT)
+  val t4 = Problem3.Node("t4", l2, l3)
+  val t3 = Problem3.Node("t3", l4, t5)
+  val t2 = Problem3.Node("t2", l1, t4)
+  val t = Problem3.Node("t", t2, t3)
+
+  if (t.biIter == null) false else
+  t.biIter.getNext.getNext.getNext.getNext.getNext.getNext.getValue match {
+    case Some("t3") => true
+    case _ => false
+  }
+}
+
+// case 20
+{
+  val emT = Problem3.Empty[String]()
+
+  //         t
+  //        /\
+  //    t2        t3
+  //   /\         /\
+  // l1 t4       l4 t5
+  //     /\         /
+  //   l2 l3       l5
+
+  val l1 = Problem3.Node("l1", emT, emT)
+  val l2 = Problem3.Node("l2", emT, emT)
+  val l3 = Problem3.Node("l3", emT, emT)
+  val l4 = Problem3.Node("l4", emT, emT)
+  val l5 = Problem3.Node("l5", emT, emT)
+
+  val t5 = Problem3.Node("t5", l5, emT)
+  val t4 = Problem3.Node("t4", l2, l3)
+  val t3 = Problem3.Node("t3", l4, t5)
+  val t2 = Problem3.Node("t2", l1, t4)
+  val t = Problem3.Node("t", t2, t3)
+
+  if (t.biIter == null) false else
+  t.biIter.getNext.getNext.getNext.getNext.getNext.getNext.
+  getPrev.getPrev.getNext.getNext.getNext.getValue match {
+    case Some("l4") => true
+    case _ => false
+  }
+}
+
+//Prob4
+// case 0
+{
+  val start = System.currentTimeMillis()
+  val test = Problem4.primes.nth(5) == Some(13)
+  val end = System.currentTimeMillis()
+  println(end - start)
+  test && end - start <= 100
+}
+// case 1
+{
+  val start = System.currentTimeMillis()
+  val test = Problem4.primes.nth(7) == Some(19) // 0.1 secs
+  val end = System.currentTimeMillis()
+  println(end - start)
+  test && end - start <= 100
+}
+// case 2
+{
+  val start = System.currentTimeMillis()
+  val test = Problem4.primes.nth(1000) == Some(7927)
+  val end = System.currentTimeMillis()
+  println(end - start)
+  test && end - start <= 1000
+}
+// case 3
+{
+  val start = System.currentTimeMillis()
+  val test = Problem4.primes.nth(10000) == Some(104743) // 5 secs
+  val end = System.currentTimeMillis()
+  println(end - start)
+  test && end - start <= 4000
+}
+// case 4
+{
+  val t1 = System.currentTimeMillis()
+  val prime = Problem4.primes.nth(10000)
+  val t2 = System.currentTimeMillis()
+  val test = Problem4.primes.nth(10001) == Some(104759)
+  val t3 = System.currentTimeMillis()
+  println(t2 - t1)
+  println(t3 - t2)
+  test && t2 - t1 <= 4000 && t3 - t2 <= 10
+}
+// case 5
+{
+  val t1 = System.currentTimeMillis()
+  val prime = Problem4.primes.nth(10000)
+  val t2 = System.currentTimeMillis()
+  val test = Problem4.primes.nth(10010) == Some(104849)
+  val t3 = System.currentTimeMillis()
+  println(t2 - t1)
+  println(t3 - t2)
+  test && t2 - t1 <= 4000 && t3 - t2 <= 10
+}
