@@ -5,14 +5,17 @@ import pp201802.proj.Data.DataBundle._
 import pp201802.proj.Data.DataBundle.ExprToString._
 import pp201802.proj.Lexer._
 import pp201802.proj.Parser._
+import pp201802.proj.MyParser._
 
 object Test extends App {
+  val myparser = true // change this into *true* if you want to use MyParser
+
   def print_result(b:Boolean) : Unit =
     if (b) println("O") else println("X")
 
-  def run_eval(eval: Expr => Val)(code:String) : Val = {
+  def run_eval(eval: Expr => Val)(code: String): Val = {
     val tokens = ProjLexer(code)
-    val e:Expr = Parser(tokens)
+    val e: Expr = if (myparser) MyParser(tokens) else Parser(tokens)
     eval(e)
   }
 
@@ -116,7 +119,7 @@ object Test extends App {
       // 11, 12 => hint for scope of "x"
       { // 11
         val code = "(let ((def x () (cons a b)) (val a 5) (val b 3)) (let ((val y x) (val a 4)) (app y)))" // (5, 3)
-        val res = conv.toPair(run_myeval(code)) match { 
+        val res = conv.toPair(run_myeval(code)) match {
           case Some((_, _)) => true // this only checks whether the result is a pair.
           case _ => false
         }
@@ -142,7 +145,7 @@ object Test extends App {
     try {
       println("=================")
       println("2. Infinite Lazy List Test")
-    
+
       { // 1
 
         val code = "(let ((lazy-val inflist (let ((def x () (rmk (val hd 1) (lazy-val tl (app x))))) (app x)))) (rfd inflist hd))"
@@ -169,7 +172,7 @@ object Test extends App {
       case e : EvalException =>
         println("myeval failed: " + e.msg)
     }
-    
+
     try {
       println("=================")
       println("3. Tailrec Test (should be finished)")
