@@ -8,7 +8,7 @@ import pp201802.proj.Parser._
 import pp201802.proj.MyParser._
 
 object Test extends App {
-  val myparser = true // change this into *true* if you want to use MyParser
+  val myparser = false // change this into *true* if you want to use MyParser
 
   def print_result(b:Boolean) : Unit =
     if (b) println("O") else println("X")
