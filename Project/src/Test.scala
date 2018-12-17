@@ -113,10 +113,20 @@ object Test extends App {
         print_result(res)
       }
 
+      // 11, 12 => hint for scope of "x"
       { // 11
-        val code = "(let ((def x () (cons a b)) (val a 5) (val b 3)) (let ((val y x) (val a 4)) (app y)))"
+        val code = "(let ((def x () (cons a b)) (val a 5) (val b 3)) (let ((val y x) (val a 4)) (app y)))" // (5, 3)
         val res = conv.toPair(run_myeval(code)) match { 
-          case Some(_) => true // this only checks whether the result is a pair.
+          case Some((_, _)) => true // this only checks whether the result is a pair.
+          case _ => false
+        }
+        print_result(res)
+      }
+
+      { // 12
+        val code = "(let ((def x () (cons a b)) (val a 5) (val b 3)) (let ((val a 4) (val y x)) (app y)))" // (5, 3)
+        val res = conv.toPair(run_myeval(code)) match {
+          case Some((_, _)) => true // this only checks whether the result is a pair.
           case _ => false
         }
         print_result(res)
@@ -129,7 +139,6 @@ object Test extends App {
       case e : EvalException =>
         println("myeval failed: " + e.msg)
     }
-
     try {
       println("=================")
       println("2. Infinite Lazy List Test")
